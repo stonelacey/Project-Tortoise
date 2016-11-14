@@ -1,4 +1,7 @@
+    import javax.swing.*;
 
-public class MainView {
+
+    public class MainView extends JPanel
+    {
     
-}
+    }
