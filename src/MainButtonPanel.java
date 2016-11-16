@@ -6,6 +6,7 @@ import java.awt.*;
 
 
 public class MainButtonPanel extends JPanel{
+    //buttons, label
     private JLabel snake1Name;
     private JLabel snake1Score;
     private JLabel snake2Name;
@@ -17,9 +18,11 @@ public class MainButtonPanel extends JPanel{
     
     MainButtonPanel()
     {
+        //layout 
         GridLayout grid = new GridLayout(2,4);
         this.setLayout(grid);
         
+        //initialization
         snake1Name = new JLabel("Default 1 Name");
         snake1Score = new JLabel("724");
         snake2Name = new JLabel("Default 2 Name");
@@ -29,6 +32,8 @@ public class MainButtonPanel extends JPanel{
         credits = new JButton("Credits");
         instruct = new JButton("How To Play");
         
+        
+        //adding to panel
         add(snake1Name);
         add(options);
         add(scores);
@@ -39,6 +44,11 @@ public class MainButtonPanel extends JPanel{
         add(snake2Score);
          
         
+    }
+    
+    public JButton getCredits()
+    {
+        return credits;
     }
     
     
