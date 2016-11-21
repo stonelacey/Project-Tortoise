@@ -1,4 +1,6 @@
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +15,8 @@ public class Snake2Panel extends JPanel{
     JButton greenSnake;
     
     Snake2Panel() {
+             GridLayout border = new GridLayout(3,3);
+        this.setLayout(border);
         snake2Label = new JLabel("Snake 2's Settings");
         snake2Name = new JTextField("Snake 2's Name");
         snake2ColorLabel = new JLabel("Snake 2's Color:");

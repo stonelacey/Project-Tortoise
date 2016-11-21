@@ -1,4 +1,5 @@
 
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +14,8 @@ public class Snake1Panel extends JPanel{
     JButton yellowSnake;
     
     Snake1Panel() {
+        GridLayout border = new GridLayout(3,2);
+        this.setLayout(border);
         snake1Label = new JLabel("Snake 1's Settings");
         snake1Name = new JTextField("Snake 1's Name");
         snake1ColorLabel = new JLabel("Snake 1's Color:");

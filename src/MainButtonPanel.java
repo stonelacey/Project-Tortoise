@@ -46,9 +46,9 @@ public class MainButtonPanel extends JPanel{
         
     }
     
-    public JButton getCredits()
+    public JButton getOptions()
     {
-        return credits;
+        return options;
     }
     
     

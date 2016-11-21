@@ -13,10 +13,10 @@ public class OptionsView extends JPanel{
         snake1Panel = new Snake1Panel();
         snake2Panel = new Snake2Panel();
         
-        JPanel panel = new JPanel();
-        panel.setLayout(border);
-        panel.add(optionPanel, BorderLayout.CENTER);
-        panel.add(snake1Panel, BorderLayout.WEST);
-        panel.add(snake2Panel, BorderLayout.EAST);
+        
+        this.setLayout(border);
+        add(optionPanel, BorderLayout.CENTER);
+        add(snake1Panel, BorderLayout.WEST);
+        add(snake2Panel, BorderLayout.EAST);
     }
 }

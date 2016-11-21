@@ -3,40 +3,40 @@
 
     import javax.swing.*;
     import java.awt.*;
+    import java.awt.event.*;
 
 
     public class MainView extends JFrame
     {
-
-        private MainButtonPanel buttonPanel;
-        private SplashPanel splash;
+        MainViewPanel mainVi;
+        OptionsView opVi;
         MainView()
         {
-            //initializations
-            BorderLayout border = new BorderLayout();
-            buttonPanel = new MainButtonPanel();
-            splash = new SplashPanel();
-            
-            //panel and whatnot
-            JPanel panel = new JPanel();
-            panel.setLayout(border);
-            panel.add(buttonPanel, BorderLayout.NORTH);
-            panel.add(splash, BorderLayout.CENTER);
-            
+
             //frame stuff
-            this.setContentPane(panel);
-            this.pack();
-            this.setTitle("Snake: 2 Player Apocalypse Edition");
-            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setTitle("Snake: 2 Player Apocalypse Edition");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setSize(800, 600); 
+            
+            mainVi = new MainViewPanel();
+            add(mainVi);
             
         
             
         }
         
-        public void addListener()
+        
+        
+        public void addOptionListener(ActionListener al)
         {
-            buttonPanel.getCredits();
+            mainVi.getButPan().getOptions().addActionListener(al);
+        }
+        
+        public void showOptions(OptionsView opVi)
+        {
+            mainVi.removeSplash();
+            mainVi.addOptions(opVi);
+            
         }
 
     }

@@ -1,4 +1,6 @@
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +15,8 @@ public class GenOptPanel extends JPanel {
     JButton cancelButton;
     
     GenOptPanel() {
+             GridLayout border = new GridLayout(2,3);
+        this.setLayout(border);
         genSettingsLabel = new JLabel("General Settings");
         whiteButton = new JButton("White");
         blackButton = new JButton("Black");
