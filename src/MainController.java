@@ -9,17 +9,23 @@
         
         //things for options
         OptionsView opVi;
+        OptionsController opCon;
+        OptionsModel opMod;
+        
+        //things for credits and instructions
+        CreditPanel credPan;
+        InstructPanel instPan;
         
         public MainController(MainModel mo, MainView vi)
         {
             this.vi = vi;
             this.mo = mo;
             
+            opMod = new OptionsModel();
             opVi = new OptionsView();
+            opCon = new OptionsController();
             
             vi.addOptionListener(new OptionListener());
-            
-            
         }
         
         
@@ -28,7 +34,7 @@
         {
             public void actionPerformed(ActionEvent e)
             {
-                vi.showOptions(opVi); 
+                vi.showOptions(opVi);
             }
         }
         

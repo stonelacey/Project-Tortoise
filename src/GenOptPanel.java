@@ -15,12 +15,12 @@ public class GenOptPanel extends JPanel {
     JButton cancelButton;
     
     GenOptPanel() {
-             GridLayout border = new GridLayout(2,3);
+             GridLayout border = new GridLayout(6, 1);
         this.setLayout(border);
         genSettingsLabel = new JLabel("General Settings");
-        whiteButton = new JButton("White");
-        blackButton = new JButton("Black");
-        grayButton = new JButton("Gray");
+        whiteButton = new JButton("White background");
+        blackButton = new JButton("Black background");
+        grayButton = new JButton("Gray background");
         saveSettings = new JButton("Save");
         cancelButton = new JButton("Cancel");
         

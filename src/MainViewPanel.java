@@ -45,4 +45,8 @@ public class MainViewPanel extends JPanel
     {
         remove(splash);
     }
+
+    void addCredits(CreditPanel credPan) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

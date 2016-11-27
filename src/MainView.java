@@ -10,6 +10,7 @@
     {
         MainViewPanel mainVi;
         OptionsView opVi;
+        
         MainView()
         {
 
@@ -32,11 +33,31 @@
             mainVi.getButPan().getOptions().addActionListener(al);
         }
         
+        public void addCreditListener(ActionListener al)
+        {
+            mainVi.getButPan().getCredits().addActionListener(al);
+        }
+        public void addInstructListener(ActionListener al)
+        {
+            mainVi.getButPan().getInstruct().addActionListener(al);
+        }
+        
+        
         public void showOptions(OptionsView opVi)
         {
             mainVi.removeSplash();
             mainVi.addOptions(opVi);
-            
+        }
+        
+        public void showCredits(CreditPanel credPan)
+        {
+            mainVi.removeSplash();  
+            mainVi.addCredits(credPan);
+        }
+        
+        public void showInstructions(InstructPanel instPan)
+        {
+            mainVi.removeSplash();
         }
 
     }
