@@ -23,7 +23,7 @@
             
             opMod = new OptionsModel();
             opVi = new OptionsView();
-            opCon = new OptionsController();
+            opCon = new OptionsController(opMod, opVi);
             credPan = new CreditPanel();
             instPan = new InstructPanel();
             

@@ -32,4 +32,26 @@ public class GenOptPanel extends JPanel {
         add(saveSettings);
         add(cancelButton);
     }
+    
+    public JButton getWhiteBackgroundButton() {
+        return whiteButton;
+    }
+    
+    public JButton getBlackBackgroundButton() {
+        return blackButton;
+    }
+    
+    public JButton getGrayBackgroundButton() {
+        return grayButton;
+    }
+    
+    public JButton getSaveButton() {
+        return saveSettings;
+    }
+    
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+    
+    
 }
