@@ -4,14 +4,24 @@ import javax.swing.*;
 
 public class CreditPanel extends JPanel
 {
-    JLabel credits;
-    JLabel credits2;
+    JLabel developers;
+    JLabel matt;
+    JLabel dino;
+    JLabel stone;
+    JLabel spacer;
+    JLabel className;
+    JLabel project;
+    JLabel date;
     
     CreditPanel()
     {
-        credits = new JLabel("Developers:\nMatthew Guyan\nAdrianne Kubiak\nStone Lacey\n");
-        credits2 = new JLabel("\nIST 242\nFinal Project\nDecember 2016");
-        add(credits);
-        add(credits2);
+        developers = new JLabel("Developers:");
+        matt = new JLabel("Matthew Guyan");
+        dino = new JLabel("Adrianne Kubiak");
+        stone = new JLabel("Stone Lacey");
+        spacer = new JLabel();
+        className = new JLabel("IST 242");
+        project = new JLabel("Final Project");
+        date = new JLabel("December 2016");
     }
 }
