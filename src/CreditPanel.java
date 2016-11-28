@@ -1,9 +1,11 @@
 //DINO
 
 import javax.swing.*;
+import java.awt.*;
 
 public class CreditPanel extends JPanel
 {
+    GridLayout credits;
     JLabel developers;
     JLabel matt;
     JLabel dino;
@@ -15,6 +17,9 @@ public class CreditPanel extends JPanel
     
     CreditPanel()
     {
+        credits = new GridLayout(8, 1);
+        this.setLayout(credits);
+        
         developers = new JLabel("Developers:");
         matt = new JLabel("Matthew Guyan");
         dino = new JLabel("Adrianne Kubiak");
