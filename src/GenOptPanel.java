@@ -25,6 +25,7 @@ public class GenOptPanel extends JPanel {
         cancelButton = new JButton("Cancel");
         
         add(genSettingsLabel);
+        genSettingsLabel.setHorizontalAlignment(JLabel.CENTER);
         add(whiteButton);
         add(blackButton);
         add(grayButton);
