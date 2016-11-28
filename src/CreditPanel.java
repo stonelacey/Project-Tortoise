@@ -23,5 +23,14 @@ public class CreditPanel extends JPanel
         className = new JLabel("IST 242");
         project = new JLabel("Final Project");
         date = new JLabel("December 2016");
+        
+        add(developers);
+        add(matt);
+        add(dino);
+        add(stone);
+        add(spacer);
+        add(className);
+        add(project);
+        add(date);
     }
 }
