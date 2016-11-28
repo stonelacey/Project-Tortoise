@@ -8,6 +8,10 @@ public class OptionsModel {
     String snake2Name;
     Color snake1Color;
     Color snake2Color;
+    Color snake1TempColor;
+    Color snake2TempColor;
+    Color backgroundColor;
+    Color backgroundTempColor;
     
     private Snake snake1;
     private Snake snake2;
@@ -47,6 +51,22 @@ public class OptionsModel {
     
     public void setSnake2Color(Color snake2Color) {
         this.snake2Color = snake2Color;
+    }
+    
+    public Color getSnake1TempColor() {
+        return snake1.getTempColor();
+    }
+    
+    public void setSnake1TempColor(Color snake1TempColor) {
+        this.snake1TempColor = snake1TempColor;
+    }
+    
+    public Color getSnake2TempColor() {
+        return snake2.getTempColor();
+    }
+    
+    public void setSnake2TempColor(Color snake2TempColor) {
+        this.snake2TempColor = snake2TempColor;
     }
     
 }
