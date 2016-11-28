@@ -10,6 +10,8 @@
     {
         MainViewPanel mainVi;
         OptionsView opVi;
+        CreditPanel credPan;
+        InstructPanel instPan;
         
         MainView()
         {
@@ -45,19 +47,26 @@
         
         public void showOptions(OptionsView opVi)
         {
+            mainVi.removeInst();
+            mainVi.removeCredits();
             mainVi.removeSplash();
             mainVi.addOptions(opVi);
         }
         
         public void showCredits(CreditPanel credPan)
         {
-            mainVi.removeSplash();  
+            mainVi.removeSplash(); 
+            mainVi.removeOptions();
+            mainVi.removeInst();
             mainVi.addCredits(credPan);
         }
         
         public void showInstructions(InstructPanel instPan)
         {
             mainVi.removeSplash();
+            mainVi.removeCredits();
+            mainVi.removeOptions();
+            mainVi.addInstruct(instPan);
         }
 
     }

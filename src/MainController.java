@@ -24,8 +24,12 @@
             opMod = new OptionsModel();
             opVi = new OptionsView();
             opCon = new OptionsController();
+            credPan = new CreditPanel();
+            instPan = new InstructPanel();
             
             vi.addOptionListener(new OptionListener());
+            vi.addCreditListener(new CreditListener());
+            vi.addInstructListener(new InstructListener());
         }
         
         
@@ -38,5 +42,22 @@
             }
         }
         
+        class CreditListener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                vi.showCredits(credPan);
+            }
+        
+        }
+        
+        class InstructListener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                vi.showInstructions(instPan);
+            }
+        
+        }
 
     }

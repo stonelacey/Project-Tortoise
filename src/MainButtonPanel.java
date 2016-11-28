@@ -12,9 +12,9 @@ public class MainButtonPanel extends JPanel{
     private JLabel snake2Name;
     private JLabel snake2Score;
     private JButton options;
-    private JButton scores;
     private JButton credits;
     private JButton instruct;
+    private JButton game;
     
     MainButtonPanel()
     {
@@ -28,16 +28,16 @@ public class MainButtonPanel extends JPanel{
         snake2Name = new JLabel("Default 2 Name");
         snake2Score = new JLabel("007");
         options = new JButton("Options");
-        scores = new JButton("High Score");
         credits = new JButton("Credits");
         instruct = new JButton("How To Play");
+        game = new JButton("Play game!!");
         
         
         //adding to panel
         add(snake1Name);
         snake1Name.setHorizontalAlignment(JLabel.CENTER);
         add(options);
-        add(scores);
+        add(game);
         add(snake2Name);
         snake2Name.setHorizontalAlignment(JLabel.CENTER);
         add(snake1Score);
