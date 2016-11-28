@@ -25,6 +25,7 @@ public class Snake2Panel extends JPanel{
         purpleSnake = new JButton("Purple");
         
         add(snake2Label);
+        snake2Label.setHorizontalAlignment(JLabel.CENTER);
         add(snake2Name);
         add(greenSnake);
         add(blueSnake);

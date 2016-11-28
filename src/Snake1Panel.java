@@ -24,6 +24,7 @@ public class Snake1Panel extends JPanel{
         yellowSnake = new JButton("Yellow");
         
         add(snake1Label);
+        snake1Label.setHorizontalAlignment(JLabel.CENTER);
         add(snake1Name);
         add(redSnake);
         add(orangeSnake);
