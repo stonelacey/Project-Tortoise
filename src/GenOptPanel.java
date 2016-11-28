@@ -6,7 +6,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class GenOptPanel extends JPanel {
+public class GenOptPanel extends JPanel
+{
     JLabel genSettingsLabel;
     JButton whiteButton;
     JButton blackButton;
@@ -14,8 +15,9 @@ public class GenOptPanel extends JPanel {
     JButton saveSettings;
     JButton cancelButton;
     
-    GenOptPanel() {
-             GridLayout border = new GridLayout(6, 1);
+    GenOptPanel()
+    {
+        GridLayout border = new GridLayout(6, 1);
         this.setLayout(border);
         genSettingsLabel = new JLabel("General Settings");
         whiteButton = new JButton("White background");
