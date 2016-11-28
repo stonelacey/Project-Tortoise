@@ -37,5 +37,14 @@ public class CreditPanel extends JPanel
         add(className);
         add(project);
         add(date);
+        
+        developers.setHorizontalAlignment(JLabel.CENTER);
+        matt.setHorizontalAlignment(JLabel.CENTER);
+        dino.setHorizontalAlignment(JLabel.CENTER);
+        stone.setHorizontalAlignment(JLabel.CENTER);
+        spacer.setHorizontalAlignment(JLabel.CENTER);
+        className.setHorizontalAlignment(JLabel.CENTER);
+        project.setHorizontalAlignment(JLabel.CENTER);
+        date.setHorizontalAlignment(JLabel.CENTER);
     }
 }
