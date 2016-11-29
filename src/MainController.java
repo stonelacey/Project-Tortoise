@@ -1,11 +1,11 @@
     import java.awt.event.*;
 
-
     public class MainController 
     {
         //things for the main
         MainView vi;
         MainModel mo;
+        MainButtonPanel mBPanel;
         
         //things for options
         OptionsView opVi;
@@ -69,7 +69,7 @@
         {
             public void actionPerformed(ActionEvent e)
             {
-                gamePan.setColor(snake1.getSnakeColorString(), snake2.getSnakeColorString(), opMod.getBackgroundColorString());
+                gamePan.setColor(opMod.getBackgroundColorString(), opMod.getSnake1ColorString(), opMod.getSnake2ColorString());
                 vi.showGame(gamePan);
             }
         }

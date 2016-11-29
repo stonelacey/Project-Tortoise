@@ -32,6 +32,14 @@ public class OptionsModel {
         this.snake2.setSnakeName(snake2);
     }
     
+    public String getSnake1Name() {
+        return snake1.getSnakeName();
+    }
+    
+    public String getSnake2Name() {
+        return snake2.getSnakeName();
+    }
+    
     public void setSnakeColor()
     {
         this.snake1.setSnakeColor(snake1TempColor);
@@ -42,7 +50,10 @@ public class OptionsModel {
         return snake1.getSnakeColor();
     }
     public void setSnake1ColorString(String snake1Color){
-        this.snake1Color = snake1Color;
+        this.snake1.setSnakeColorString(snake1Color);
+    }
+    public String getSnake1ColorString() {
+        return snake1.getSnakeColorString();
     }
       
     public Color getSnake2Color() {
@@ -50,7 +61,10 @@ public class OptionsModel {
     }
     
     public void setSnake2ColorString(String snake2Color){
-        this.snake2Color = snake2Color;
+        this.snake2.setSnakeColorString(snake2Color);
+    }
+    public String getSnake2ColorString() {
+        return snake2.getSnakeColorString();
     }
 
     public void setSnake1TempColor(Color snake1Temp)
@@ -77,7 +91,7 @@ public class OptionsModel {
     
     public void setLabels()
     {
-       gamePan.setColor(snake1.getSnakeColorString(), snake2.getSnakeColorString(), "White");
+       gamePan.setColor(getBackgroundColorString(), getSnake1ColorString(), getSnake2ColorString());
        mBPanel.setName(snake1.getSnakeName(), snake2.getSnakeName());
        System.out.println(snake1.getSnakeName());
     }

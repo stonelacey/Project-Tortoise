@@ -18,11 +18,11 @@ public class GamePanel extends JPanel{
         add(snake2color);
     }
     
-    public void setColor(String color1, String color2, String color3)
+    public void setColor(String color3, String color1, String color2)
     {
-        backcolor.setText("Background color is: " + color1);
-        snake1color.setText("Snake 1 color is: " + color2);
-        snake2color.setText("Snake 2 color is: " + color3);
+        backcolor.setText("Background color is: " + color3);
+        snake1color.setText("Snake 1 color is: " + color1);
+        snake2color.setText("Snake 2 color is: " + color2);
         
     }
     
