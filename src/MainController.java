@@ -27,7 +27,7 @@
             opCon = new OptionsController(opMod, opVi);
             credPan = new CreditPanel();
             instPan = new InstructPanel();
-            gamePan = new GamePanel();
+            gamePan = new GamePanel(opMod);
             
             vi.addOptionListener(new OptionListener());
             vi.addCreditListener(new CreditListener());

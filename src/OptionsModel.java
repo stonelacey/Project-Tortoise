@@ -1,7 +1,5 @@
-
 import java.awt.Color;
 
-//Matt
 public class OptionsModel {
     
     Color snake1TempColor;
@@ -18,9 +16,11 @@ public class OptionsModel {
     
     GamePanel gamePan;
     MainButtonPanel mBPanel;
+    OptionsModel optMod;
     
     OptionsModel() {
-        gamePan = new GamePanel();
+        this.optMod = optMod;
+        gamePan = new GamePanel(optMod);
         mBPanel = new MainButtonPanel();
         snake1 = new Snake();
         snake2 = new Snake();
@@ -40,6 +40,9 @@ public class OptionsModel {
     
     public Color getSnake1Color() {
         return snake1.getSnakeColor();
+    }
+    public String getSnake1ColorString(){
+        return snake1.getSnakeColor().toString();
     }
       
     public Color getSnake2Color() {
