@@ -7,11 +7,11 @@ import javax.swing.JTextField;
 
 public class Snake1Panel extends JPanel{
     JLabel snake1Label;
-    JTextField snake1Name;
+    private JTextField snake1Name;
     JLabel snake1ColorLabel;
-    JButton redSnake;
-    JButton orangeSnake;
-    JButton yellowSnake;
+    private JButton redSnake;
+    private JButton orangeSnake;
+    private JButton yellowSnake;
     
     Snake1Panel() {
         GridLayout border = new GridLayout(6, 1);
@@ -30,4 +30,21 @@ public class Snake1Panel extends JPanel{
         add(orangeSnake);
         add(yellowSnake);
     }
+    
+    public JButton getRedSnakeButton() {
+        return redSnake;
+    }
+    
+    public JButton getOrangeSnakeButton() {
+        return orangeSnake;
+    }
+    
+    public JButton getYellowSnakeButton() {
+        return yellowSnake;
+    }
+    
+    public String getSnake1Name() {
+        return snake1Name.getText();
+    }
+    
 }

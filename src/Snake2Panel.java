@@ -8,11 +8,11 @@ import javax.swing.JTextField;
 
 public class Snake2Panel extends JPanel{
     JLabel snake2Label;
-    JTextField snake2Name;
+    private JTextField snake2Name;
     JLabel snake2ColorLabel;
-    JButton greenSnake;
-    JButton blueSnake;
-    JButton purpleSnake;
+    private JButton greenSnake;
+    private JButton blueSnake;
+    private JButton purpleSnake;
     
     Snake2Panel() {
              GridLayout border = new GridLayout(6, 1);
@@ -31,4 +31,21 @@ public class Snake2Panel extends JPanel{
         add(blueSnake);
         add(purpleSnake);
     }
+    
+    public JButton getGreenSnakeButton() {
+        return greenSnake;
+    }
+    
+    public JButton getBlueSnakeButton() {
+        return blueSnake;
+    }
+    
+    public JButton getPurpleSnakeButton() {
+        return purpleSnake;
+    }
+    
+    public String getSnake2Name() {
+        return snake2Name.getText();
+    }
+    
 }
