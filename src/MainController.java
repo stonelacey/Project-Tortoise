@@ -15,6 +15,7 @@
         //things for credits and instructions
         CreditPanel credPan;
         InstructPanel instPan;
+        GamePanel gamePan;
         
         public MainController(MainModel mo, MainView vi)
         {
@@ -26,10 +27,12 @@
             opCon = new OptionsController(opMod, opVi);
             credPan = new CreditPanel();
             instPan = new InstructPanel();
+            gamePan = new GamePanel();
             
             vi.addOptionListener(new OptionListener());
             vi.addCreditListener(new CreditListener());
             vi.addInstructListener(new InstructListener());
+            vi.addGameListener(new GameListener());
         }
         
         
@@ -58,6 +61,14 @@
                 vi.showInstructions(instPan);
             }
         
+        }
+        
+        class GameListener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                vi.showGame(gamePan);
+            }
         }
 
     }

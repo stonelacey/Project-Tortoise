@@ -4,10 +4,6 @@ import java.awt.Color;
 //Matt
 public class OptionsModel {
     
-    String snake1Name;
-    String snake2Name;
-    Color snake1Color;
-    Color snake2Color;
     Color snake1TempColor;
     Color snake2TempColor;
     Color backgroundColor;
@@ -16,57 +12,62 @@ public class OptionsModel {
     private Snake snake1;
     private Snake snake2;
     
+    String color1;
+    String color2;
+    String color3;
+    
+    GamePanel gamePan;
+    MainButtonPanel mBPanel;
+    
     OptionsModel() {
+        gamePan = new GamePanel();
+        mBPanel = new MainButtonPanel();
         snake1 = new Snake();
         snake2 = new Snake();
     }
     
-    public String getSnake1Name() {
-        return snake1.getSnakeName();
+    public void setSnakeName(String snake1, String snake2)
+    {
+        this.snake1.setSnakeName(snake1);
+        this.snake2.setSnakeName(snake2);
     }
     
-    public void setSnake1Name(String snake1Name) {
-        this.snake1Name = snake1Name;
-    }
-    
-    public String getSnake2Name() {
-        return snake2.getSnakeName();
-    }
-    
-    public void setSnake2Name(String snake2Name) {
-        this.snake2Name = snake2Name;
+    public void setSnakeColor()
+    {
+        this.snake1.setSnakeColor(snake1TempColor);
+        this.snake2.setSnakeColor(snake2TempColor);
     }
     
     public Color getSnake1Color() {
         return snake1.getSnakeColor();
     }
-    
-    public void setSnake1Color(Color snake1Color) {
-        this.snake1Color = snake1Color;
-    }
-    
+      
     public Color getSnake2Color() {
         return snake2.getSnakeColor();
     }
-    
-    public void setSnake2Color(Color snake2Color) {
-        this.snake2Color = snake2Color;
+
+    public void setSnake1TempColor(Color snake1Temp, String color)
+    {
+        this.snake1TempColor = snake1Temp;
+        this.color1 = color;
+    }
+        
+    public void setSnake2TempColor(Color snake2Temp, String color)
+    {
+        this.snake2TempColor = snake2Temp;
+        this.color2 = color;
+    }
+    public void setBackColor(Color backgroundcolor, String color)
+    {
+        this.color3 = color;
+        this.backgroundColor = backgroundcolor;
     }
     
-    public Color getSnake1TempColor() {
-        return snake1.getTempColor();
-    }
-    
-    public void setSnake1TempColor(Color snake1TempColor) {
-        this.snake1TempColor = snake1TempColor;
-    }
-    
-    public Color getSnake2TempColor() {
-        return snake2.getTempColor();
-    }
-    
-    public void setSnake2TempColor(Color snake2TempColor) {
-        this.snake2TempColor = snake2TempColor;
+    public void setLabels()
+    {
+       gamePan.setColor(this.color3, this.color2, this.color1);
+       mBPanel.setName(snake1.getSnakeName(), snake2.getSnakeName());
+        System.out.println(snake1.getSnakeName());
     }
     
 }

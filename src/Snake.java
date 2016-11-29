@@ -5,9 +5,12 @@ public class Snake {
     
     String snakeName;
     Color snakeColor;
-    Color tempColor;
     
-    Snake() {};
+    Snake() 
+    {
+        this.snakeName = "";
+        snakeColor = Color.BLACK;
+    };
     
     public void setSnakeName(String snakeName) {
         this.snakeName = snakeName;
@@ -24,13 +27,4 @@ public class Snake {
     public Color getSnakeColor() {
         return snakeColor;
     }
-    
-    public void setTempColor(Color tempColor) {
-        this.tempColor = tempColor;
-    }
-    
-    public Color getTempColor() {
-        return tempColor;
-    }
-    
 }

@@ -10,6 +10,7 @@ public class MainViewPanel extends JPanel
     private OptionsView opVi;
     private CreditPanel credPan;
     private InstructPanel instPan;
+    private GamePanel gamePan;
 
     
     MainViewPanel()
@@ -59,6 +60,14 @@ public class MainViewPanel extends JPanel
         repaint();
     }
     
+    public void addGame(GamePanel gamePan)
+    {
+        this.gamePan = gamePan;
+        add(gamePan, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+    
     
     //removers
     public void removeSplash()
@@ -84,6 +93,12 @@ public class MainViewPanel extends JPanel
         if(this.instPan != null)
         remove(instPan);
     
+    }
+    
+    public void removeGame()
+    {
+        if(this.gamePan != null)
+            remove(gamePan);
     }
 
 

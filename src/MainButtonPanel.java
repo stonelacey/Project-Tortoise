@@ -50,6 +50,12 @@ public class MainButtonPanel extends JPanel{
         
     }
     
+    public void setName(String play1Name, String play2Name)
+    {
+        this.snake1Name.setText(play1Name);
+        this.snake2Name.setText(play2Name);
+    }
+    
     public JButton getOptions()
     {
         return options;
@@ -65,6 +71,10 @@ public class MainButtonPanel extends JPanel{
         return instruct;
     }
     
+    public JButton getGame()
+    {
+        return game;
+    }
     
     
     

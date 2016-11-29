@@ -43,8 +43,8 @@ public class Snake1Panel extends JPanel{
         return yellowSnake;
     }
     
-    public JTextField getSnake1NameButton() {
-        return snake1Name;
+    public String getSnake1Name() {
+        return snake1Name.getText();
     }
     
 }
