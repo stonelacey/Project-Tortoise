@@ -7,9 +7,9 @@ import java.awt.*;
 
 public class MainButtonPanel extends JPanel{
     //buttons, label
-    private JLabel snake1Name;
+     JLabel snake1Name;
     private JLabel snake1Score;
-    private JLabel snake2Name;
+     JLabel snake2Name;
     private JLabel snake2Score;
     private JButton options;
     private JButton credits;
