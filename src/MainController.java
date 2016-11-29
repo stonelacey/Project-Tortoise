@@ -17,6 +17,8 @@
         InstructPanel instPan;
         GamePanel gamePan;
         
+        Snake snake1, snake2;
+        
         public MainController(MainModel mo, MainView vi)
         {
             this.vi = vi;
@@ -67,6 +69,7 @@
         {
             public void actionPerformed(ActionEvent e)
             {
+                gamePan.setColor(snake1.getSnakeColorString(), snake2.getSnakeColorString(), opMod.getBackgroundColorString());
                 vi.showGame(gamePan);
             }
         }

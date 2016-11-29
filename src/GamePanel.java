@@ -20,9 +20,9 @@ public class GamePanel extends JPanel{
     
     public void setColor(String color1, String color2, String color3)
     {
-        this.backcolor.setText("Background color is: " + optMod.getSnake1ColorString());
-        this.snake1color.setText("Snake 1 color is: " + color2);
-        this.snake2color.setText("Snake 2 color is:" + color3);
+        backcolor.setText("Background color is: " + color1);
+        snake1color.setText("Snake 1 color is: " + color2);
+        snake2color.setText("Snake 2 color is: " + color3);
         
     }
     

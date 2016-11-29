@@ -10,9 +10,9 @@ public class OptionsModel {
     private Snake snake1;
     private Snake snake2;
     
-    String color1;
-    String color2;
-    String color3;
+    String snake1Color;
+    String snake2Color;
+    String backgroundColorString;
     
     GamePanel gamePan;
     MainButtonPanel mBPanel;
@@ -41,36 +41,45 @@ public class OptionsModel {
     public Color getSnake1Color() {
         return snake1.getSnakeColor();
     }
-    public String getSnake1ColorString(){
-        return snake1.getSnakeColor().toString();
+    public void setSnake1ColorString(String snake1Color){
+        this.snake1Color = snake1Color;
     }
       
     public Color getSnake2Color() {
         return snake2.getSnakeColor();
     }
+    
+    public void setSnake2ColorString(String snake2Color){
+        this.snake2Color = snake2Color;
+    }
 
-    public void setSnake1TempColor(Color snake1Temp, String color)
+    public void setSnake1TempColor(Color snake1Temp)
     {
         this.snake1TempColor = snake1Temp;
-        this.color1 = color;
     }
         
-    public void setSnake2TempColor(Color snake2Temp, String color)
+    public void setSnake2TempColor(Color snake2Temp)
     {
         this.snake2TempColor = snake2Temp;
-        this.color2 = color;
     }
-    public void setBackColor(Color backgroundcolor, String color)
+    public void setBackColor(Color backgroundcolor)
     {
-        this.color3 = color;
         this.backgroundColor = backgroundcolor;
+    }
+    
+    public void setBackgroundColorString(String backgroundColorString) {
+        this.backgroundColorString = backgroundColorString;
+    }
+    
+    public String getBackgroundColorString() {
+        return backgroundColorString;
     }
     
     public void setLabels()
     {
-       gamePan.setColor(this.color3, this.color2, this.color1);
+       gamePan.setColor(snake1.getSnakeColorString(), snake2.getSnakeColorString(), "White");
        mBPanel.setName(snake1.getSnakeName(), snake2.getSnakeName());
-        System.out.println(snake1.getSnakeName());
+       System.out.println(snake1.getSnakeName());
     }
     
 }

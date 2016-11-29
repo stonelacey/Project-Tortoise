@@ -5,6 +5,7 @@ public class Snake {
     
     String snakeName;
     Color snakeColor;
+    String snakeColorString;
     
     Snake() 
     {
@@ -27,4 +28,13 @@ public class Snake {
     public Color getSnakeColor() {
         return snakeColor;
     }
+    
+    public void setSnakeColorString(String snakeColorString) {
+        this.snakeColorString = snakeColorString;
+    }
+    
+    public String getSnakeColorString() {
+        return snakeColorString;
+    }
+    
 }
