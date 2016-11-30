@@ -10,9 +10,9 @@ public class GamePanel extends JPanel{
     {
         this.optMod = optMod;
         
-        backcolor = new JLabel("Background is: ");
-        snake1color = new JLabel("Snake 1 Color: ");
-        snake2color = new JLabel("Snake 2 Color: ");
+        backcolor = new JLabel();
+        snake1color = new JLabel();
+        snake2color = new JLabel();
         add(backcolor);
         add(snake1color);
         add(snake2color);
@@ -23,7 +23,7 @@ public class GamePanel extends JPanel{
         backcolor.setText("Background color is: " + color3);
         snake1color.setText("Snake 1 color is: " + color1);
         snake2color.setText("Snake 2 color is: " + color2);
-        
+             
     }
     
 }

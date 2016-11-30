@@ -71,7 +71,6 @@
             {
                 gamePan.setColor(opMod.getBackgroundColorString(), opMod.getSnake1ColorString(), opMod.getSnake2ColorString());
               //  mBPanel.setName(opMod.getSnake1Name(), opMod.getSnake2Name());
-               // mBPanel.repaint();
                 vi.showGame(gamePan);
             }
         }

@@ -29,53 +29,68 @@ public class OptionsController {
                     System.out.println("Red button pressed");
                     
                 } else if (clickSource == view.getOrangeSnakeButton()) {
+                    
                     model.setSnake1ColorString("Orange");
                     model.setSnake1TempColor(Color.ORANGE);
                     System.out.println("Orange button pressed");
                     
                 } else if (clickSource == view.getYellowSnakeButton()) {
+                    
                     model.setSnake1ColorString("Yellow");
                     model.setSnake1TempColor(Color.YELLOW);
                     System.out.println("Yellow button pressed");
                     
                 } else if (clickSource == view.getGreenSnakeButton()) {
+                    
                     model.setSnake2ColorString("Green");
                     model.setSnake2TempColor(Color.GREEN);
                     System.out.println("Green button pressed");
                     
                 } else if (clickSource == view.getBlueSnakeButton()) {
+                    
                     model.setSnake2ColorString("Blue");
                     model.setSnake2TempColor(Color.BLUE);
                     System.out.println("Blue button pressed");
                 
                 } else if (clickSource == view.getPurpleSnakeButton()) {
-                    model.setSnake2ColorString("Magenta");
+                    
+                    model.setSnake2ColorString("Purple");
                     model.setSnake2TempColor(Color.MAGENTA);
                     System.out.println("Purple button pressed");
                 
                 } else if (clickSource == view.getWhiteBackgroundButton()) {
+                    
                     model.setBackgroundColorString("White");
-                    model.setBackColor(Color.WHITE);
+                    model.setBackgroundTempColor(Color.WHITE);
                     System.out.println("White button pressed");
                 
                 } else if (clickSource == view.getBlackBackgroundButton()) {
-                model.setBackgroundColorString("Black");
-                    model.setBackColor(Color.BLACK);
+                    
+                    model.setBackgroundColorString("Black");
+                    model.setBackgroundTempColor(Color.BLACK);
                     System.out.println("Black button pressed");
                 
                 } else if (clickSource == view.getGrayBackgroundButton()) {
+                    
                     model.setBackgroundColorString("Gray");
-                    model.setBackColor(Color.GRAY);
+                    model.setBackgroundTempColor(Color.GRAY);
                     System.out.println("Gray button pressed");
                 
                 } else if (clickSource == view.getSaveButton()) {
-               //     model.setSnakeColor();
+
                //     model.setSnakeName("","");
                     model.setLabels();
+                    
+                    model.setSnake1Color(model.getSnake1TempColor());
+                    model.setSnake2Color(model.getSnake2TempColor());
+                    model.setBackColor(model.getBackgroundTempColor());
+                    
                     System.out.println("Save button pressed");
                 
                 } else if (clickSource == view.getCancelButton()) {
+                    
                     System.out.println("Cancel button pressed");
+                    
                 }
             }
         }

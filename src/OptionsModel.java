@@ -40,9 +40,11 @@ public class OptionsModel {
         return snake2.getSnakeName();
     }
     
-    public void setSnakeColor()
-    {
+    public void setSnake1Color(Color snake1TempColor) {
         this.snake1.setSnakeColor(snake1TempColor);
+    }
+    
+    public void setSnake2Color(Color snake2TempColor) {
         this.snake2.setSnakeColor(snake2TempColor);
     }
     
@@ -71,14 +73,31 @@ public class OptionsModel {
     {
         this.snake1TempColor = snake1Temp;
     }
+    
+    public Color getSnake1TempColor() {
+        return snake1TempColor;
+    }
         
     public void setSnake2TempColor(Color snake2Temp)
     {
         this.snake2TempColor = snake2Temp;
     }
-    public void setBackColor(Color backgroundcolor)
+    
+    public Color getSnake2TempColor() {
+        return snake2TempColor;
+    }
+    
+    public void setBackColor(Color backgroundColor)
     {
-        this.backgroundColor = backgroundcolor;
+        this.backgroundColor = backgroundColor;
+    }
+    
+    public void setBackgroundTempColor(Color backgroundTempColor) {
+        this.backgroundTempColor = backgroundTempColor;
+    }
+    
+    public Color getBackgroundTempColor() {
+        return backgroundTempColor;
     }
     
     public void setBackgroundColorString(String backgroundColorString) {
