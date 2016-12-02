@@ -53,8 +53,13 @@ public class GamePanel extends JPanel
             yVal--;
             
         }
+        //Snake 1 Start
+        g.setColor(optMod.getSnake1Color());
+        g.fillRect(78, 225, 25, 25);
         
-        g.fillRect(375, 225, 25, 25);
+        //Snake 2 Start
+        g.setColor(optMod.getSnake2Color());
+        g.fillRect(700, 225, 25, 25);
         
     
     }
