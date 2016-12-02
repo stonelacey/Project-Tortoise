@@ -4,7 +4,6 @@
     {
         //things for the main
         MainView vi;
-        MainModel mo;
         MainButtonPanel mBPanel;
         
         //things for options
@@ -19,10 +18,9 @@
         
         Snake snake1, snake2;
         
-        public MainController(MainModel mo, MainView vi)
+        public MainController( MainView vi)
         {
             this.vi = vi;
-            this.mo = mo;
             
             opMod = new OptionsModel();
             opVi = new OptionsView();
