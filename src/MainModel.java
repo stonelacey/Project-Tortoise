@@ -1,4 +1,0 @@
-//Stone
-    public class MainModel {
-        
-    }
