@@ -20,6 +20,7 @@
             setTitle("Snake: 2 Player Apocalypse Edition");
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setSize(800, 600); 
+            setResizable(false);
             
             mainVi = new MainViewPanel();
             add(mainVi);
