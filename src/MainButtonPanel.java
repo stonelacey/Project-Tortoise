@@ -36,8 +36,8 @@ public class MainButtonPanel extends JPanel{
         //adding to panel
         add(snake1Name);
         snake1Name.setHorizontalAlignment(JLabel.CENTER);
-        add(options);
         add(game);
+        add(options);
         add(snake2Name);
         snake2Name.setHorizontalAlignment(JLabel.CENTER);
         add(snake1Score);
