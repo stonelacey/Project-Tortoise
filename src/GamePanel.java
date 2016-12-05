@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class GamePanel extends JPanel
@@ -14,13 +15,26 @@ public class GamePanel extends JPanel
     private final String MOVE_LEFT = "move left";
     private final String MOVE_RIGHT = "move right";
     
+    private final String MOVE_UP1 = "move up1";
+    private final String MOVE_DOWN1 = "move down1";
+    private final String MOVE_LEFT1 = "move left1";
+    private final String MOVE_RIGHT1 = "move right1";
+    
     //Movements
     private final int UP = 0;
     private final int DOWN = 1;
     private final int RIGHT = 2;
     private final int LEFT = 3;
+    private final int UP1 = 4;
+    private final int DOWN1 = 5;
+    private final int RIGHT1 = 6;
+    private final int LEFT1 = 7;
     
-    private final JButton button;
+    private  InputMap button;
+    private final ActionMap am;
+    
+    private  InputMap button1;
+    private final ActionMap am1;
     
     private OptionsModel optMod;
     private JPanel gameArea;
@@ -37,13 +51,15 @@ public class GamePanel extends JPanel
         gameArea = new JPanel();
         gameArea.setSize(750, 450);
         
-        button = new JButton("Test button, please ignore.");
-        button.setBounds(0,0,1,1);
+        button = getInputMap(IFW);
+        am = getActionMap();
+        
+        button1 = getInputMap(IFW);
+        am1 = getActionMap();
+        
         
         add(gameArea);
-        button.setVisible(false);
-        add(button);
-        
+      
     }
     
     @Override
@@ -93,18 +109,31 @@ public class GamePanel extends JPanel
         g.setColor(optMod.getSnake2Color());
         g.fillRect(snake2CurrentX, snake2CurrentY, 25, 25);
         
-        //Input maps
-        button.getInputMap(IFW).put(KeyStroke.getKeyStroke("UP"), MOVE_UP);
-        button.getInputMap(IFW).put(KeyStroke.getKeyStroke("DOWN"), MOVE_DOWN);
-        button.getInputMap(IFW).put(KeyStroke.getKeyStroke("LEFT"), MOVE_LEFT);
-        button.getInputMap(IFW).put(KeyStroke.getKeyStroke("RIGHT"), MOVE_RIGHT);
+        //Input maps, p2
+        button.put(KeyStroke.getKeyStroke("UP"), MOVE_UP);
+        button.put(KeyStroke.getKeyStroke("DOWN"), MOVE_DOWN);
+        button.put(KeyStroke.getKeyStroke("LEFT"), MOVE_LEFT);
+        button.put(KeyStroke.getKeyStroke("RIGHT"), MOVE_RIGHT);
         
-        //Action maps
-        button.getActionMap().put(MOVE_UP, new MoveAction(UP));
-        button.getActionMap().put(MOVE_DOWN, new MoveAction(DOWN));
-        button.getActionMap().put(MOVE_LEFT, new MoveAction(LEFT));
-        button.getActionMap().put(MOVE_RIGHT, new MoveAction(RIGHT));
-    
+                //Input maps, p1
+        button.put(KeyStroke.getKeyStroke("W"), MOVE_UP1);
+        button.put(KeyStroke.getKeyStroke("S"), MOVE_DOWN1);
+        button.put(KeyStroke.getKeyStroke("A"), MOVE_LEFT1);
+        button.put(KeyStroke.getKeyStroke("D"), MOVE_RIGHT1);
+        
+        //Action maps p2
+        am.put(MOVE_UP, new MoveAction(UP));
+        am.put(MOVE_DOWN, new MoveAction(DOWN));
+        am.put(MOVE_LEFT, new MoveAction(LEFT));
+        am.put(MOVE_RIGHT, new MoveAction(RIGHT));
+        
+        
+        //Action Maps P1
+        am.put(MOVE_UP1, new MoveAction(UP1));
+        am.put(MOVE_DOWN1, new MoveAction(DOWN1));
+        am.put(MOVE_LEFT1, new MoveAction(LEFT1));
+        am.put(MOVE_RIGHT1, new MoveAction(RIGHT1));
+   
     }
     
     private class MoveAction extends AbstractAction {
@@ -121,16 +150,36 @@ public class GamePanel extends JPanel
         public void actionPerformed(ActionEvent e) {
           //  g.setColor(optMod.getSnake2Color());
             if (direction == UP) {
+                
+                snake2CurrentY -= 25;                
+                }
+             if (direction == DOWN) {
                 snake2CurrentY += 25;
-            } if (direction == DOWN) {
-                snake2CurrentY -= 25;
             } if (direction == RIGHT) {
                 snake2CurrentX += 25;
             } if (direction == LEFT) {
                 snake2CurrentX -= 25;
             }
+            
+            //player 1
+            if (direction == UP1) {
+                
+                snake1CurrentY -= 25;  
+                System.out.println("up");
+                }
+             if (direction == DOWN1) {
+                snake1CurrentY += 25;
+            } if (direction == RIGHT1) {
+                snake1CurrentX += 25;
+            } if (direction == LEFT1) {
+                snake1CurrentX -= 25;
+            }
+            
+            repaint();
+            revalidate();
          //   g.fillRect(snake2CurrentX, snake2CurrentY, 25, 25);
-         System.out.println(snake2CurrentX + " " + snake2CurrentY);
+         System.out.println("Snake 2: "+ snake2CurrentX + " " + snake2CurrentY);
+         System.out.println("Snake 1: " +snake1CurrentX + " " + snake1CurrentY);
             
         }
     }
