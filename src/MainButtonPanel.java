@@ -24,9 +24,9 @@ public class MainButtonPanel extends JPanel{
         
         //initialization
         snake1Name = new JLabel("Default 1 Name");
-        snake1Score = new JLabel("724");
+        snake1Score = new JLabel(" ");
         snake2Name = new JLabel("Default 2 Name");
-        snake2Score = new JLabel("007");
+        snake2Score = new JLabel(" ");
         options = new JButton("Options");
         credits = new JButton("Credits");
         instruct = new JButton("How To Play");
