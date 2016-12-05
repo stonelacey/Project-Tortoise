@@ -12,10 +12,11 @@ public class InstructPanel extends JPanel
     JLabel in4;
     JLabel in5;
     JLabel in6;
+    JLabel spacer;
     
     InstructPanel()
     {
-        instructions = new GridLayout(6,1);
+        instructions = new GridLayout(11,1);
         this.setLayout(instructions);
         in1 = new JLabel("Instructions:");
         in2 = new JLabel("The objective of the game is to outlast your opponent.");
@@ -23,6 +24,7 @@ public class InstructPanel extends JPanel
         in4 = new JLabel("Player 1 will use WASD to move.");
         in5 = new JLabel("Player 2 will use the arrow keys to move.");
         in6 = new JLabel("May the best player win.");
+        spacer = new JLabel();
         
         add(in1);
         add(in2);
@@ -30,6 +32,12 @@ public class InstructPanel extends JPanel
         add(in4);
         add(in5);
         add(in6);
+        add(spacer);
+        add(spacer);
+        add(spacer);
+        add(spacer);
+        add(spacer);
+        
         
         in1.setHorizontalAlignment(JLabel.CENTER);
         in2.setHorizontalAlignment(JLabel.CENTER);
