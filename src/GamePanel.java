@@ -41,7 +41,7 @@ public class GamePanel extends JPanel
     
     int snake1CurrentX = 78;
     int snake1CurrentY = 225;
-    int snake2CurrentX = 700;
+    int snake2CurrentX = 703;
     int snake2CurrentY = 225;
     
     GamePanel(OptionsModel optMod)
@@ -68,26 +68,27 @@ public class GamePanel extends JPanel
         
         
         int xVal = 50;
-        int yVal = 50;
-        for (int x = 0; x <= 700; x++)
+        int yVal = 47;
+        
+        for (int x = 0; x < 703; x++)
         {
             g.fillRect(xVal, yVal, 3, 3);
             xVal++;
             
         }
-        for (int y = 0; y < 400; y++)
+        for (int y = 0; y < 403; y++)
         {
             g.fillRect(xVal, yVal, 3, 3);
             yVal++;
             
         }
-        for (int z = 0; z <= 700; z++)
+        for (int z = 0; z < 703; z++)
         {
             g.fillRect(xVal, yVal, 3, 3);
             xVal--;
             
         }
-        for (int w = 0; w < 400; w++)
+        for (int w = 0; w < 403; w++)
         {
             g.fillRect(xVal, yVal, 3, 3);
             yVal--;
@@ -98,7 +99,7 @@ public class GamePanel extends JPanel
         
         //Background color
         g.setColor(optMod.getBackgroundTempColor());
-        g.fillRect(53, 53, 698, 397);
+        g.fillRect(53, 50, 700, 400);
         
         //Snake 1 Start
         g.setColor(optMod.getSnake1Color());
