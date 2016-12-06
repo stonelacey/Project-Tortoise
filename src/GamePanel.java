@@ -191,13 +191,38 @@ public class GamePanel extends JPanel
          //   g.fillRect(snake2CurrentX, snake2CurrentY, 25, 25);
          System.out.println("Snake 2: "+ snake2CurrentX + " " + snake2CurrentY);
          System.out.println("Snake 1: " +snake1CurrentX + " " + snake1CurrentY);
-            
+         checkCollision();   
         }
     }
     
-    public void setColor(String color3, String color1, String color2)
+    public void checkCollision()
     {
+        //check for if snakes collide
+       if ((snake1CurrentX == snake2CurrentX)&&(snake1CurrentY==snake2CurrentY))
+       {
+           resetSnakes();
+       }
        
+       //check if outside boundry
+       if ((snake2CurrentY > 425)||(snake2CurrentY < 50))
+       {
+           resetSnakes();
+       }
+       
+       if ((snake1CurrentY > 425)||(snake1CurrentY < 50))
+       {
+           resetSnakes();
+       }
+       
+       if ((snake2CurrentX > 728)||(snake2CurrentX < 53))
+       {
+           resetSnakes();
+       }
+       if ((snake1CurrentX > 728)||(snake1CurrentX < 53))
+       {
+           resetSnakes();
+       }
+
     }
     
 }

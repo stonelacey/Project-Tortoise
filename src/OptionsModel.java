@@ -110,7 +110,7 @@ public class OptionsModel {
     
     public void setLabels()
     {
-       gamePan.setColor(getBackgroundColorString(), getSnake1ColorString(), getSnake2ColorString());
+       //gamePan.setColor(getBackgroundColorString(), getSnake1ColorString(), getSnake2ColorString());
        mBPanel.setName(getSnake1Name(), getSnake2Name());
     }
     
