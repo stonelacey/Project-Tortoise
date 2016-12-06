@@ -7,10 +7,10 @@ public class Snake {
     Color snakeColor;
     String snakeColorString;
     
-    Snake() 
+    Snake(String snakeName, Color color) 
     {
-        this.snakeName = "";
-        snakeColor = Color.BLACK;
+        this.snakeName = snakeName;
+        snakeColor = color;
     };
     
     public void setSnakeName(String snakeName) {

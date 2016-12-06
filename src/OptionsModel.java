@@ -22,8 +22,8 @@ public class OptionsModel {
         this.optMod = optMod;
         gamePan = new GamePanel(optMod);
         mBPanel = new MainButtonPanel();
-        snake1 = new Snake();
-        snake2 = new Snake();
+        snake1 = new Snake("Player 1", Color.RED);
+        snake2 = new Snake("Player 2", Color.GREEN);
     }
     
     public void setSnakeName(String snake1, String snake2)

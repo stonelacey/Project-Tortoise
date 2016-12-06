@@ -39,10 +39,10 @@ public class GamePanel extends JPanel
     private OptionsModel optMod;
     private JPanel gameArea;
     
-    int snake1CurrentX = 78;
-    int snake1CurrentY = 225;
-    int snake2CurrentX = 703;
-    int snake2CurrentY = 225;
+    int snake1CurrentX;
+    int snake1CurrentY;
+    int snake2CurrentX;
+    int snake2CurrentY;
     
     GamePanel(OptionsModel optMod)
     {
@@ -58,9 +58,19 @@ public class GamePanel extends JPanel
         am1 = getActionMap();
         
         
+        
         add(gameArea);
       
     }
+    
+    public void resetSnakes()
+    {
+        snake1CurrentX = 78;
+        snake1CurrentY = 225;
+        snake2CurrentX = 703;
+        snake2CurrentY = 225;
+    }
+    
     
     @Override
     public void paintComponent(Graphics g)

@@ -66,6 +66,7 @@
             mainVi.removeCredits();
             mainVi.removeSplash();
             mainVi.addGame(gamePan);
+            gamePan.resetSnakes();
         }
         
         public void showCredits(CreditPanel credPan)
