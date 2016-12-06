@@ -86,7 +86,7 @@ public class GamePanel extends JPanel
     @Override
     public void paintComponent(Graphics g)
     {
-        
+        super.paintComponent(g);
         
         int xVal = 50;
         int yVal = 47;
@@ -288,7 +288,7 @@ public class GamePanel extends JPanel
             if (direct1 == UP1) {
                 
                 snake1CurrentY -= 25;  
-                System.out.println("up");
+                
                 }
              if (direct1 == DOWN1) {
                 snake1CurrentY += 25;
@@ -308,7 +308,7 @@ public class GamePanel extends JPanel
         
     }
     
-        //timer task
+   
     
     
 }
