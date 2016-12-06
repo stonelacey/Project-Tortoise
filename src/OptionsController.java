@@ -78,13 +78,11 @@ public class OptionsController {
                 
                 } else if (clickSource == view.getSaveButton()) {
 
-               //     model.setSnakeName("","");
-                    model.setLabels();
-                    
+                    model.setSnakeName();
                     model.setSnake1Color(model.getSnake1TempColor());
                     model.setSnake2Color(model.getSnake2TempColor());
                     model.setBackColor(model.getBackgroundTempColor());
-                    
+                    model.setLabels();
                     System.out.println("Save button pressed");
                 
                 } else if (clickSource == view.getCancelButton()) {

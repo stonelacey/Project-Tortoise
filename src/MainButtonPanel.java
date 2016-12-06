@@ -53,7 +53,10 @@ public class MainButtonPanel extends JPanel{
     public void setName(String play1Name, String play2Name)
     {
         this.snake1Name.setText(play1Name);
+        System.out.println(play1Name);
         this.snake2Name.setText(play2Name);
+        repaint();
+        revalidate();
     }
     
     public JButton getOptions()

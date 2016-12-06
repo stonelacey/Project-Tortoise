@@ -17,6 +17,8 @@ public class OptionsModel {
     GamePanel gamePan;
     MainButtonPanel mBPanel;
     OptionsModel optMod;
+    Snake1Panel s1;
+    Snake2Panel s2;
     
     OptionsModel() {
         this.optMod = optMod;
@@ -24,12 +26,14 @@ public class OptionsModel {
         mBPanel = new MainButtonPanel();
         snake1 = new Snake("Player 1", Color.RED);
         snake2 = new Snake("Player 2", Color.GREEN);
+        s1 = new Snake1Panel();
+        s2 = new Snake2Panel();
     }
     
-    public void setSnakeName(String snake1, String snake2)
+    public void setSnakeName()
     {
-        this.snake1.setSnakeName(snake1);
-        this.snake2.setSnakeName(snake2);
+        snake1.setSnakeName(this.s1.getSnake1Name());
+        snake2.setSnakeName(this.s2.getSnake2Name());
     }
     
     public String getSnake1Name() {
@@ -110,7 +114,6 @@ public class OptionsModel {
     
     public void setLabels()
     {
-       //gamePan.setColor(getBackgroundColorString(), getSnake1ColorString(), getSnake2ColorString());
        mBPanel.setName(getSnake1Name(), getSnake2Name());
     }
     
