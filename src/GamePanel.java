@@ -2,10 +2,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.*;
 
 public class GamePanel extends JPanel
 {
+    //Timer
+    private Timer timer;
+    boolean timerStarted = false;
+
     //Window in focus variable
     private final int IFW = JComponent.WHEN_IN_FOCUSED_WINDOW;
     
@@ -29,6 +35,8 @@ public class GamePanel extends JPanel
     private final int DOWN1 = 5;
     private final int RIGHT1 = 6;
     private final int LEFT1 = 7;
+    
+    private int direct1 = RIGHT1, direct2 = LEFT;
     
     private  InputMap button;
     private final ActionMap am;
@@ -57,9 +65,11 @@ public class GamePanel extends JPanel
         button1 = getInputMap(IFW);
         am1 = getActionMap();
         
-        
+        timer = new Timer();
         
         add(gameArea);
+        
+        
       
     }
     
@@ -69,6 +79,7 @@ public class GamePanel extends JPanel
         snake1CurrentY = 225;
         snake2CurrentX = 703;
         snake2CurrentY = 225;
+        timerStarted = false;
     }
     
     
@@ -162,28 +173,35 @@ public class GamePanel extends JPanel
           //  g.setColor(optMod.getSnake2Color());
             if (direction == UP) {
                 
-                snake2CurrentY -= 25;                
+                snake2CurrentY -= 25;
+                direct2 = UP;
                 }
              if (direction == DOWN) {
                 snake2CurrentY += 25;
+                direct2 = DOWN;
             } if (direction == RIGHT) {
                 snake2CurrentX += 25;
+                direct2 = RIGHT;
             } if (direction == LEFT) {
                 snake2CurrentX -= 25;
+                direct2 = LEFT;
             }
             
             //player 1
             if (direction == UP1) {
                 
                 snake1CurrentY -= 25;  
-                System.out.println("up");
+                direct1 = UP1;
                 }
              if (direction == DOWN1) {
                 snake1CurrentY += 25;
+                direct1 = DOWN1;
             } if (direction == RIGHT1) {
                 snake1CurrentX += 25;
+                direct1 = RIGHT1;
             } if (direction == LEFT1) {
                 snake1CurrentX -= 25;
+                direct1 = LEFT1;
             }
             
             repaint();
@@ -191,38 +209,104 @@ public class GamePanel extends JPanel
          //   g.fillRect(snake2CurrentX, snake2CurrentY, 25, 25);
          System.out.println("Snake 2: "+ snake2CurrentX + " " + snake2CurrentY);
          System.out.println("Snake 1: " +snake1CurrentX + " " + snake1CurrentY);
+         if (timerStarted == false)
+         {
+            timerStarted = true;
+            resumeTimer();
+         }
          checkCollision();   
         }
     }
     
+
     public void checkCollision()
     {
         //check for if snakes collide
        if ((snake1CurrentX == snake2CurrentX)&&(snake1CurrentY==snake2CurrentY))
        {
            resetSnakes();
+           pauseTimer();
+
        }
        
        //check if outside boundry
        if ((snake2CurrentY > 425)||(snake2CurrentY < 50))
        {
            resetSnakes();
+           pauseTimer();
+
        }
        
        if ((snake1CurrentY > 425)||(snake1CurrentY < 50))
        {
            resetSnakes();
+           pauseTimer();
+
        }
        
        if ((snake2CurrentX > 728)||(snake2CurrentX < 53))
        {
            resetSnakes();
+           pauseTimer();
+
        }
        if ((snake1CurrentX > 728)||(snake1CurrentX < 53))
        {
            resetSnakes();
-       }
+           pauseTimer();
 
+       }
     }
+    
+    public void pauseTimer()
+    {
+        this.timer.cancel();
+        this.timer.purge();
+    }
+    
+    public void resumeTimer()
+    {
+        this.timer = new Timer();
+        TimerTask task = new TimerTask() {
+           public void run()
+           {
+            if (direct2 == UP) {
+                
+                snake2CurrentY -= 25;                
+                }
+             if (direct2 == DOWN) {
+                snake2CurrentY += 25;
+            } if (direct2 == RIGHT) {
+                snake2CurrentX += 25;
+            } if (direct2 == LEFT) {
+                snake2CurrentX -= 25;
+            }
+            
+            //player 1
+            if (direct1 == UP1) {
+                
+                snake1CurrentY -= 25;  
+                System.out.println("up");
+                }
+             if (direct1 == DOWN1) {
+                snake1CurrentY += 25;
+            } if (direct1 == RIGHT1) {
+                snake1CurrentX += 25;
+            } if (direct1 == LEFT1) {
+                snake1CurrentX -= 25;
+            }
+            
+            repaint();
+            revalidate();
+            checkCollision();
+            
+           }
+       };
+        timer.scheduleAtFixedRate(task, 1000, 1000);
+        
+    }
+    
+        //timer task
+    
     
 }
