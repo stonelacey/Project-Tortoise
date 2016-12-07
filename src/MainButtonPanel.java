@@ -7,9 +7,9 @@ import java.awt.*;
 
 public class MainButtonPanel extends JPanel{
     //buttons, label
-     JLabel snake1Name;
+    public JLabel snake1Name;
     private JLabel snake1Score;
-     JLabel snake2Name;
+    private JLabel snake2Name;
     private JLabel snake2Score;
     private JButton options;
     private JButton credits;
@@ -23,7 +23,7 @@ public class MainButtonPanel extends JPanel{
         this.setLayout(grid);
         
         //initialization
-        snake1Name = new JLabel("Default 1 Name");
+        snake1Name = new JLabel("Default 1 Name  mmmmm");
         snake1Score = new JLabel(" ");
         snake2Name = new JLabel("Default 2 Name");
         snake2Score = new JLabel(" ");
