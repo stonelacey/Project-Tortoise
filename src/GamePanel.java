@@ -60,6 +60,9 @@ public class GamePanel extends JPanel
     int snake2CurrentX;
     int snake2CurrentY;
     
+    int snake1Wins = 0;
+    int snake2Wins = 0;
+    
     GamePanel(OptionsModel optMod)
     {
         this.optMod = optMod;
@@ -272,13 +275,14 @@ public class GamePanel extends JPanel
        {
            resetSnakes();
            pauseTimer();
-
+           snake1Wins++;
        }
        
        if ((snake1CurrentY > 425)||(snake1CurrentY < 50))
        {
            resetSnakes();
            pauseTimer();
+           snake2Wins++;
 
        }
        
@@ -286,13 +290,13 @@ public class GamePanel extends JPanel
        {
            resetSnakes();
            pauseTimer();
-
+           snake1Wins++;
        }
        if ((snake1CurrentX > 728)||(snake1CurrentX < 53))
        {
            resetSnakes();
            pauseTimer();
-
+           snake2Wins++;
        }
        
        
@@ -304,6 +308,7 @@ public class GamePanel extends JPanel
            {
                resetSnakes();
                pauseTimer();
+               snake1Wins++;
            }
        
        }
@@ -314,6 +319,7 @@ public class GamePanel extends JPanel
            {
                resetSnakes();
                pauseTimer();
+               snake2Wins++;
            }
        
        }
@@ -324,6 +330,7 @@ public class GamePanel extends JPanel
            {
                resetSnakes();
                pauseTimer();
+               snake2Wins++;
            }
        
        }
@@ -335,10 +342,11 @@ public class GamePanel extends JPanel
            {
                resetSnakes();
                pauseTimer();
+               snake1Wins++;
            }
        
        }
-       
+                  
     }
     
     public void pauseTimer()
