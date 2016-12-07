@@ -50,13 +50,16 @@ public class MainButtonPanel extends JPanel{
         
     }
     
-    public void setName(String play1Name, String play2Name)
+    public void set1Name(String play1Name)
     {
-        this.snake1Name.setText(play1Name);
-        System.out.println(play1Name);
-        this.snake2Name.setText(play2Name);
-        repaint();
-        revalidate();
+        snake1Name.setText(play1Name);
+
+    }
+    
+    
+    public void set2Name(String play2Name)
+    {
+        snake2Name.setText(play2Name);
     }
     
     public JButton getOptions()
@@ -77,6 +80,13 @@ public class MainButtonPanel extends JPanel{
     public JButton getGame()
     {
         return game;
+    }
+    
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        
     }
     
     

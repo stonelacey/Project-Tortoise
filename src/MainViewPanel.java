@@ -5,7 +5,7 @@
     
 public class MainViewPanel extends JPanel
 {
-    private MainButtonPanel buttonPanel;
+    MainButtonPanel buttonPanel;
     private SplashPanel splash;
     private OptionsView opVi;
     private CreditPanel credPan;

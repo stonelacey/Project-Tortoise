@@ -30,11 +30,13 @@ public class OptionsModel {
         s2 = new Snake2Panel();
     }
     
+    /*
     public void setSnakeName()
     {
         snake1.setSnakeName(this.s1.getSnake1Name());
         snake2.setSnakeName(this.s2.getSnake2Name());
     }
+    */
     
     public String getSnake1Name() {
         return snake1.getSnakeName();
@@ -112,9 +114,6 @@ public class OptionsModel {
         return backgroundColorString;
     }
     
-    public void setLabels()
-    {
-       mBPanel.setName(getSnake1Name(), getSnake2Name());
-    }
+   
     
 }

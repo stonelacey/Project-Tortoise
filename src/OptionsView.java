@@ -80,4 +80,14 @@ public class OptionsView extends JPanel{
         return optionPanel.getCancelButton();
     }
     
+    public String getS1Name()
+    {
+        return snake1Panel.getSnake1Name();
+    }
+    
+    public String getS2Name()
+    {
+        return snake2Panel.getSnake2Name();
+    }
+    
 }

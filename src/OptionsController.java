@@ -12,13 +12,17 @@ public class OptionsController {
     private Snake1Panel s1Panel;
     private Snake2Panel s2Panel;
     private GenOptPanel genOpt;
+    private MainButtonPanel mBPanel;
+
     
     OptionsController(OptionsModel model, OptionsView view) {
         this.model = model;
         this.view = view;
         s1Panel = new  Snake1Panel();
         s2Panel = new Snake2Panel();
+        mBPanel = new MainButtonPanel();
         
+        /*
         class ButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 JButton clickSource = (JButton) e.getSource();
@@ -78,11 +82,13 @@ public class OptionsController {
                 
                 } else if (clickSource == view.getSaveButton()) {
 
-                    model.setSnakeName();
+                    //model.setSnakeName();
                     model.setSnake1Color(model.getSnake1TempColor());
                     model.setSnake2Color(model.getSnake2TempColor());
                     model.setBackColor(model.getBackgroundTempColor());
-                    model.setLabels();
+                    //model.setLabels();
+                    
+                    
                     System.out.println("Save button pressed");
                 
                 } else if (clickSource == view.getCancelButton()) {
@@ -94,7 +100,7 @@ public class OptionsController {
         }
         
         view.ButtonListener(new ButtonListener());
-        
+        */
     }
     
 }
