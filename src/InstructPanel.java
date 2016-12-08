@@ -12,6 +12,8 @@ public class InstructPanel extends JPanel
     JLabel in4;
     JLabel in5;
     JLabel in6;
+    JLabel bonus;
+    JLabel bonus2;
     JLabel spacer;
     
     InstructPanel()
@@ -24,6 +26,8 @@ public class InstructPanel extends JPanel
         in4 = new JLabel("Player 1 will use WASD to move.");
         in5 = new JLabel("Player 2 will use the arrow keys to move.");
         in6 = new JLabel("May the best player win.");
+        bonus = new JLabel("Heres a video:");
+        bonus2 = new JLabel("http://tinyurl.com/snakevidya");
         spacer = new JLabel();
         
         add(in1);
@@ -32,8 +36,8 @@ public class InstructPanel extends JPanel
         add(in4);
         add(in5);
         add(in6);
-        add(spacer);
-        add(spacer);
+        add(bonus);
+        add(bonus2);
         add(spacer);
         add(spacer);
         add(spacer);
@@ -45,6 +49,8 @@ public class InstructPanel extends JPanel
         in4.setHorizontalAlignment(JLabel.CENTER);
         in5.setHorizontalAlignment(JLabel.CENTER);
         in6.setHorizontalAlignment(JLabel.CENTER);
+        bonus.setHorizontalAlignment(JLabel.CENTER);
+        bonus2.setHorizontalAlignment(JLabel.CENTER);
     }
     
 }

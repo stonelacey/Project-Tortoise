@@ -14,6 +14,7 @@ public class CreditPanel extends JPanel
     JLabel className;
     JLabel project;
     JLabel date;
+    JLabel bonus;
     
     CreditPanel()
     {
@@ -28,6 +29,7 @@ public class CreditPanel extends JPanel
         className = new JLabel("IST 242");
         project = new JLabel("Final Project");
         date = new JLabel("December 2016");
+        bonus = new JLabel("Here's a video: https://www.youtube.com/watch?v=r6gGcrjDmec");
         
         add(developers);
         add(matt);
@@ -37,6 +39,7 @@ public class CreditPanel extends JPanel
         add(className);
         add(project);
         add(date);
+        //add(bonus);
         
         developers.setHorizontalAlignment(JLabel.CENTER);
         matt.setHorizontalAlignment(JLabel.CENTER);
@@ -46,5 +49,6 @@ public class CreditPanel extends JPanel
         className.setHorizontalAlignment(JLabel.CENTER);
         project.setHorizontalAlignment(JLabel.CENTER);
         date.setHorizontalAlignment(JLabel.CENTER);
+        //bonus.setHorizontalAlignment(JLabel.CENTER);
     }
 }

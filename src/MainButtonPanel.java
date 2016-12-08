@@ -23,9 +23,9 @@ public class MainButtonPanel extends JPanel{
         this.setLayout(grid);
         
         //initialization
-        snake1Name = new JLabel("Default 1 Name  mmmmm");
+        snake1Name = new JLabel(" ");
         snake1Score = new JLabel(" ");
-        snake2Name = new JLabel("Default 2 Name");
+        snake2Name = new JLabel(" ");
         snake2Score = new JLabel(" ");
         options = new JButton("Options");
         credits = new JButton("Credits");

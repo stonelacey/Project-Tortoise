@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel
 {
+    private JLabel p1;
+    private String p1Name = "Snake 1";
+        private JLabel p2;
+    private String p2Name = "Snake 2";
+    
     private boolean gamePlayedOnce = false;
     //arraylist for x and y vals
     ArrayList <Integer> snake1XVals;
@@ -84,11 +89,22 @@ public class GamePanel extends JPanel
         this.snake2YVals = new ArrayList<Integer>();
 
         
-        
+        p1 = new JLabel ("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+        p2 = new JLabel ("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
+        add(p1);
+        add(p2);
         add(gameArea);
         
         
       
+    }
+    
+    public void setNames(String name1, String name2)
+    {
+        p1Name = name1;
+        p2Name = name2;
+        p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+        p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
     }
     
     public void resetSnakes()
@@ -106,7 +122,7 @@ public class GamePanel extends JPanel
         snake2CurrentY = 225;
 
         
-        timerStarted = false;
+        this.timerStarted = false;
     }
     
     
@@ -152,8 +168,8 @@ public class GamePanel extends JPanel
         //Snake 1 Start
         g.setColor(optMod.getSnake1Color());
         g.fillRect(snake1CurrentX, snake1CurrentY, 25, 25);
-        snake1XVals.add(snake1CurrentX);
-        snake1YVals.add(snake1CurrentY);
+        this.snake1XVals.add(snake1CurrentX);
+        this.snake1YVals.add(snake1CurrentY);
          for (int y = 0; y < this.snake1XVals.size(); y++)
         {
             g.fillRect(this.snake1XVals.get(y), this.snake1YVals.get(y), 25, 25);
@@ -248,19 +264,27 @@ public class GamePanel extends JPanel
             }
             repaint();
             revalidate();
-   
          if (timerStarted == false)
          {
             timerStarted = true;
             resumeTimer();
          }
-         checkCollision();   
+   
+
+ 
         }
     }
     
 
     public void checkCollision()
     {
+        /*
+         if (this.timerStarted == false)
+         {
+            this.timerStarted = true;
+            resumeTimer();
+         }
+*/
         this.gamePlayedOnce = true;
         //check for if snakes collide
        if ((snake1CurrentX == snake2CurrentX)&&(snake1CurrentY==snake2CurrentY))
@@ -276,6 +300,7 @@ public class GamePanel extends JPanel
            resetSnakes();
            pauseTimer();
            snake1Wins++;
+           p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
        }
        
        if ((snake1CurrentY > 425)||(snake1CurrentY < 50))
@@ -283,7 +308,7 @@ public class GamePanel extends JPanel
            resetSnakes();
            pauseTimer();
            snake2Wins++;
-
+           p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
        }
        
        if ((snake2CurrentX > 728)||(snake2CurrentX < 53))
@@ -291,12 +316,14 @@ public class GamePanel extends JPanel
            resetSnakes();
            pauseTimer();
            snake1Wins++;
+           p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
        }
        if ((snake1CurrentX > 728)||(snake1CurrentX < 53))
        {
            resetSnakes();
            pauseTimer();
            snake2Wins++;
+           p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
        }
        
        
@@ -309,6 +336,7 @@ public class GamePanel extends JPanel
                resetSnakes();
                pauseTimer();
                snake1Wins++;
+               p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
            }
        
        }
@@ -320,6 +348,7 @@ public class GamePanel extends JPanel
                resetSnakes();
                pauseTimer();
                snake2Wins++;
+               p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
            }
        
        }
@@ -331,6 +360,7 @@ public class GamePanel extends JPanel
                resetSnakes();
                pauseTimer();
                snake2Wins++;
+               p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
            }
        
        }
@@ -343,6 +373,7 @@ public class GamePanel extends JPanel
                resetSnakes();
                pauseTimer();
                snake1Wins++;
+               p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
            }
        
        }
@@ -395,7 +426,7 @@ public class GamePanel extends JPanel
             
            }
        };
-        timer.scheduleAtFixedRate(task, 00, 125);
+        timer.scheduleAtFixedRate(task, 0, 125);
         
     }
     

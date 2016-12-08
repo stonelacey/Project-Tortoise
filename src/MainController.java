@@ -142,11 +142,7 @@ import javax.swing.JButton;
                     opMod.setSnake1Color(opMod.getSnake1TempColor());
                     opMod.setSnake2Color(opMod.getSnake2TempColor());
                     opMod.setBackColor(opMod.getBackgroundTempColor());
-                    //mBPanel.set1Name(opVi.getS1Name());
-                    //mBPanel.set2Name(opVi.getS2Name());
-                    mBPanel.snake1Name.setText("asdgf");
-                    //System.out.println(mBPanel.snake1Name.getText());
-                    //System.out.println(mBPanel.snake2Name.getText());
+                    gamePan.setNames(opVi.getS1Name(),opVi.getS2Name() );
                     
                     
                     
