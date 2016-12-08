@@ -2,10 +2,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.*;
 import java.util.ArrayList;
+import javax.sound.sampled.*;
 
 public class GamePanel extends JPanel
 {
@@ -98,6 +102,30 @@ public class GamePanel extends JPanel
         
       
     }
+    
+    public void playMusic(int sound)
+    {
+        if(sound == 1)
+        {
+        try{
+           Clip clip = AudioSystem.getClip();
+           clip.open(AudioSystem.getAudioInputStream(new File ("src/images/BD.wav")));
+           clip.start();
+        }
+        catch(Exception error){}
+        }
+        else if (sound == 2)
+        {
+           try{
+           Clip bang = AudioSystem.getClip();
+           bang.open(AudioSystem.getAudioInputStream(new File ("src/images/bang.wav")));
+           bang.start();
+        }
+        catch(Exception error){}
+        }
+    
+    }
+        
     
     public void setNames(String name1, String name2)
     {
@@ -193,6 +221,7 @@ public class GamePanel extends JPanel
         button.put(KeyStroke.getKeyStroke("DOWN"), MOVE_DOWN);
         button.put(KeyStroke.getKeyStroke("LEFT"), MOVE_LEFT);
         button.put(KeyStroke.getKeyStroke("RIGHT"), MOVE_RIGHT);
+                button.put(KeyStroke.getKeyStroke("M"), "music");
         
         //Input maps, p1
         button.put(KeyStroke.getKeyStroke("W"), MOVE_UP1);
@@ -205,6 +234,7 @@ public class GamePanel extends JPanel
         am.put(MOVE_DOWN, new MoveAction(DOWN));
         am.put(MOVE_LEFT, new MoveAction(LEFT));
         am.put(MOVE_RIGHT, new MoveAction(RIGHT));
+                am.put("music", new MoveAction(99));
         
         
         //Action Maps P1
@@ -262,6 +292,10 @@ public class GamePanel extends JPanel
 
                 direct1 = LEFT1;
             }
+            if (direction == 99)
+            {
+                playMusic(1);
+            }
             repaint();
             revalidate();
          if (timerStarted == false)
@@ -291,6 +325,7 @@ public class GamePanel extends JPanel
        {
            resetSnakes();
            pauseTimer();
+                           playMusic(2);
 
        }
        
@@ -301,6 +336,7 @@ public class GamePanel extends JPanel
            pauseTimer();
            snake1Wins++;
            p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+                           playMusic(2);
        }
        
        if ((snake1CurrentY > 425)||(snake1CurrentY < 50))
@@ -309,6 +345,7 @@ public class GamePanel extends JPanel
            pauseTimer();
            snake2Wins++;
            p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
+                           playMusic(2);
        }
        
        if ((snake2CurrentX > 728)||(snake2CurrentX < 53))
@@ -317,6 +354,7 @@ public class GamePanel extends JPanel
            pauseTimer();
            snake1Wins++;
            p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+                           playMusic(2);
        }
        if ((snake1CurrentX > 728)||(snake1CurrentX < 53))
        {
@@ -324,6 +362,7 @@ public class GamePanel extends JPanel
            pauseTimer();
            snake2Wins++;
            p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
+                           playMusic(2);
        }
        
        
@@ -337,6 +376,7 @@ public class GamePanel extends JPanel
                pauseTimer();
                snake1Wins++;
                p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+                               playMusic(2);
            }
        
        }
@@ -349,6 +389,7 @@ public class GamePanel extends JPanel
                pauseTimer();
                snake2Wins++;
                p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
+                               playMusic(2);
            }
        
        }
@@ -361,6 +402,7 @@ public class GamePanel extends JPanel
                pauseTimer();
                snake2Wins++;
                p2.setText("|    Player 2 Name: " + this.p2Name + ", Score: " + snake2Wins);
+                               playMusic(2);
            }
        
        }
@@ -374,6 +416,7 @@ public class GamePanel extends JPanel
                pauseTimer();
                snake1Wins++;
                p1.setText("Player 1 Name: " + this.p1Name + ", Score: " + snake1Wins);
+                               playMusic(2);
            }
        
        }
